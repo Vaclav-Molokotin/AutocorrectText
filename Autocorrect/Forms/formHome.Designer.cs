@@ -30,201 +30,169 @@ namespace Autocorrect
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formHome));
-            this.textBoxReplace = new System.Windows.Forms.TextBox();
-            this.textBoxSearch = new System.Windows.Forms.TextBox();
-            this.buttonReplace = new System.Windows.Forms.Button();
-            this.buttonOpenFile = new System.Windows.Forms.Button();
-            this.textBoxPath = new System.Windows.Forms.TextBox();
-            this.textBox = new System.Windows.Forms.TextBox();
-            this.labelPath = new System.Windows.Forms.Label();
-            this.labelSearch = new System.Windows.Forms.Label();
-            this.labelChange = new System.Windows.Forms.Label();
+            this.tbReplace = new System.Windows.Forms.TextBox();
+            this.tbSearch = new System.Windows.Forms.TextBox();
+            this.btnReplace = new System.Windows.Forms.Button();
+            this.btnOpenOrSaveFile = new System.Windows.Forms.Button();
+            this.tbPath = new System.Windows.Forms.TextBox();
+            this.tbText = new System.Windows.Forms.TextBox();
+            this.labPath = new System.Windows.Forms.Label();
+            this.labSearch = new System.Windows.Forms.Label();
+            this.labChange = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.labelText = new System.Windows.Forms.Label();
-            this.buttonBack = new System.Windows.Forms.Button();
-            this.buttonFileSave = new System.Windows.Forms.Button();
-            this.buttonReset = new System.Windows.Forms.Button();
-            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.buttonHelp = new System.Windows.Forms.Button();
+            this.labText = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnHelp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBoxReplace
+            // tbReplace
             // 
-            this.textBoxReplace.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tbReplace.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxReplace.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxReplace.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxReplace.Location = new System.Drawing.Point(437, 102);
-            this.textBoxReplace.Name = "textBoxReplace";
-            this.textBoxReplace.Size = new System.Drawing.Size(323, 27);
-            this.textBoxReplace.TabIndex = 3;
-            this.textBoxReplace.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbReplace_KeyPress);
+            this.tbReplace.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbReplace.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbReplace.Location = new System.Drawing.Point(437, 102);
+            this.tbReplace.Name = "tbReplace";
+            this.tbReplace.Size = new System.Drawing.Size(323, 27);
+            this.tbReplace.TabIndex = 3;
+            this.tbReplace.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbReplace_KeyPress);
             // 
-            // textBoxSearch
+            // tbSearch
             // 
-            this.textBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxSearch.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxSearch.Location = new System.Drawing.Point(30, 102);
-            this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(323, 27);
-            this.textBoxSearch.TabIndex = 2;
+            this.tbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbSearch.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbSearch.Location = new System.Drawing.Point(30, 102);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(323, 27);
+            this.tbSearch.TabIndex = 2;
             // 
-            // buttonReplace
+            // btnReplace
             // 
-            this.buttonReplace.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonReplace.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonReplace.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.buttonReplace.Location = new System.Drawing.Point(836, 102);
-            this.buttonReplace.Name = "buttonReplace";
-            this.buttonReplace.Size = new System.Drawing.Size(191, 27);
-            this.buttonReplace.TabIndex = 7;
-            this.buttonReplace.Text = "Заменить";
-            this.buttonReplace.UseVisualStyleBackColor = true;
-            this.buttonReplace.Click += new System.EventHandler(this.btnChange_Click);
+            this.btnReplace.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReplace.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnReplace.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnReplace.Location = new System.Drawing.Point(836, 102);
+            this.btnReplace.Name = "btnReplace";
+            this.btnReplace.Size = new System.Drawing.Size(191, 27);
+            this.btnReplace.TabIndex = 7;
+            this.btnReplace.Text = "Заменить";
+            this.btnReplace.UseVisualStyleBackColor = true;
+            this.btnReplace.Click += new System.EventHandler(this.btnReplace_Click);
             // 
-            // buttonOpenFile
+            // btnOpenOrSaveFile
             // 
-            this.buttonOpenFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOpenFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonOpenFile.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.buttonOpenFile.Location = new System.Drawing.Point(836, 30);
-            this.buttonOpenFile.Margin = new System.Windows.Forms.Padding(100, 3, 3, 3);
-            this.buttonOpenFile.Name = "buttonOpenFile";
-            this.buttonOpenFile.Size = new System.Drawing.Size(191, 27);
-            this.buttonOpenFile.TabIndex = 6;
-            this.buttonOpenFile.Text = "Выбрать файл";
-            this.buttonOpenFile.UseVisualStyleBackColor = true;
-            this.buttonOpenFile.Click += new System.EventHandler(this.btnOpenFile_Click);
+            this.btnOpenOrSaveFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOpenOrSaveFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnOpenOrSaveFile.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnOpenOrSaveFile.Location = new System.Drawing.Point(836, 30);
+            this.btnOpenOrSaveFile.Margin = new System.Windows.Forms.Padding(100, 3, 3, 3);
+            this.btnOpenOrSaveFile.Name = "btnOpenOrSaveFile";
+            this.btnOpenOrSaveFile.Size = new System.Drawing.Size(191, 27);
+            this.btnOpenOrSaveFile.TabIndex = 6;
+            this.btnOpenOrSaveFile.Text = "Выбрать файл";
+            this.btnOpenOrSaveFile.UseVisualStyleBackColor = true;
+            this.btnOpenOrSaveFile.Click += new System.EventHandler(this.btnOpenOrSaveFile_Click);
             // 
-            // textBoxPath
+            // tbPath
             // 
-            this.textBoxPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tbPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxPath.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.textBoxPath.Location = new System.Drawing.Point(30, 30);
-            this.textBoxPath.Margin = new System.Windows.Forms.Padding(3, 3, 100, 3);
-            this.textBoxPath.Name = "textBoxPath";
-            this.textBoxPath.Size = new System.Drawing.Size(730, 27);
-            this.textBoxPath.TabIndex = 5;
-            this.textBoxPath.TextChanged += new System.EventHandler(this.tbPath_TextChanged);
-            this.textBoxPath.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPath_EnterKeyPressed);
+            this.tbPath.BackColor = System.Drawing.SystemColors.Window;
+            this.tbPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.tbPath.Location = new System.Drawing.Point(30, 30);
+            this.tbPath.Margin = new System.Windows.Forms.Padding(3, 3, 100, 3);
+            this.tbPath.Name = "tbPath";
+            this.tbPath.Size = new System.Drawing.Size(730, 27);
+            this.tbPath.TabIndex = 5;
+            this.tbPath.TextChanged += new System.EventHandler(this.tbPath_TextChanged);
+            this.tbPath.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPath_EnterKeyPressed);
             // 
-            // textBox
+            // tbText
             // 
-            this.textBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tbText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox.Location = new System.Drawing.Point(30, 187);
-            this.textBox.Multiline = true;
-            this.textBox.Name = "textBox";
-            this.textBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox.Size = new System.Drawing.Size(997, 324);
-            this.textBox.TabIndex = 8;
-            this.textBox.TextChanged += new System.EventHandler(this.tbText_OriginalTextChanged);
+            this.tbText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbText.Location = new System.Drawing.Point(30, 187);
+            this.tbText.Multiline = true;
+            this.tbText.Name = "tbText";
+            this.tbText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.tbText.Size = new System.Drawing.Size(997, 324);
+            this.tbText.TabIndex = 8;
+            this.tbText.TextChanged += new System.EventHandler(this.tbText_OriginalTextChanged);
             // 
-            // labelPath
+            // labPath
             // 
-            this.labelPath.AutoSize = true;
-            this.labelPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.labelPath.Location = new System.Drawing.Point(26, 7);
-            this.labelPath.Name = "labelPath";
-            this.labelPath.Size = new System.Drawing.Size(102, 18);
-            this.labelPath.TabIndex = 9;
-            this.labelPath.Text = "Путь к файлу";
+            this.labPath.AutoSize = true;
+            this.labPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.labPath.Location = new System.Drawing.Point(26, 7);
+            this.labPath.Name = "labPath";
+            this.labPath.Size = new System.Drawing.Size(102, 18);
+            this.labPath.TabIndex = 9;
+            this.labPath.Text = "Путь к файлу";
             // 
-            // labelSearch
+            // labSearch
             // 
-            this.labelSearch.AutoSize = true;
-            this.labelSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.labelSearch.Location = new System.Drawing.Point(26, 79);
-            this.labelSearch.Name = "labelSearch";
-            this.labelSearch.Size = new System.Drawing.Size(158, 18);
-            this.labelSearch.TabIndex = 10;
-            this.labelSearch.Text = "Символы для поиска";
+            this.labSearch.AutoSize = true;
+            this.labSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.labSearch.Location = new System.Drawing.Point(26, 79);
+            this.labSearch.Name = "labSearch";
+            this.labSearch.Size = new System.Drawing.Size(158, 18);
+            this.labSearch.TabIndex = 10;
+            this.labSearch.Text = "Символы для поиска";
             // 
-            // labelChange
+            // labChange
             // 
-            this.labelChange.AutoSize = true;
-            this.labelChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.labelChange.Location = new System.Drawing.Point(433, 79);
-            this.labelChange.Name = "labelChange";
-            this.labelChange.Size = new System.Drawing.Size(163, 18);
-            this.labelChange.TabIndex = 11;
-            this.labelChange.Text = "Символы для замены";
+            this.labChange.AutoSize = true;
+            this.labChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.labChange.Location = new System.Drawing.Point(433, 79);
+            this.labChange.Name = "labChange";
+            this.labChange.Size = new System.Drawing.Size(163, 18);
+            this.labChange.TabIndex = 11;
+            this.labChange.Text = "Символы для замены";
             // 
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog";
             this.openFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog_FileOk);
             // 
-            // labelText
+            // labText
             // 
-            this.labelText.AutoSize = true;
-            this.labelText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.labelText.Location = new System.Drawing.Point(26, 164);
-            this.labelText.Name = "labelText";
-            this.labelText.Size = new System.Drawing.Size(121, 18);
-            this.labelText.TabIndex = 12;
-            this.labelText.Text = "Исходный текст";
+            this.labText.AutoSize = true;
+            this.labText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.labText.Location = new System.Drawing.Point(26, 164);
+            this.labText.Name = "labText";
+            this.labText.Size = new System.Drawing.Size(121, 18);
+            this.labText.TabIndex = 12;
+            this.labText.Text = "Исходный текст";
             // 
-            // buttonBack
+            // btnReset
             // 
-            this.buttonBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonBack.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.buttonBack.Location = new System.Drawing.Point(836, 102);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(191, 27);
-            this.buttonBack.TabIndex = 13;
-            this.buttonBack.Text = "Назад";
-            this.buttonBack.UseVisualStyleBackColor = true;
-            this.buttonBack.Visible = false;
-            this.buttonBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnReset.ForeColor = System.Drawing.Color.Red;
+            this.btnReset.Location = new System.Drawing.Point(30, 543);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(191, 27);
+            this.btnReset.TabIndex = 15;
+            this.btnReset.Text = "Сброс";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnResetClick);
             // 
-            // buttonFileSave
+            // btnHelp
             // 
-            this.buttonFileSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonFileSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonFileSave.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.buttonFileSave.Location = new System.Drawing.Point(836, 30);
-            this.buttonFileSave.Margin = new System.Windows.Forms.Padding(100, 3, 3, 3);
-            this.buttonFileSave.Name = "buttonFileSave";
-            this.buttonFileSave.Size = new System.Drawing.Size(191, 27);
-            this.buttonFileSave.TabIndex = 14;
-            this.buttonFileSave.Text = "Сохранить в файл";
-            this.buttonFileSave.UseVisualStyleBackColor = true;
-            this.buttonFileSave.Visible = false;
-            this.buttonFileSave.Click += new System.EventHandler(this.btnFileSave_Click);
-            // 
-            // buttonReset
-            // 
-            this.buttonReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonReset.ForeColor = System.Drawing.Color.Red;
-            this.buttonReset.Location = new System.Drawing.Point(30, 543);
-            this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(191, 27);
-            this.buttonReset.TabIndex = 15;
-            this.buttonReset.Text = "Сброс";
-            this.buttonReset.UseVisualStyleBackColor = true;
-            this.buttonReset.Click += new System.EventHandler(this.btnResetClick);
-            // 
-            // buttonHelp
-            // 
-            this.buttonHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonHelp.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.buttonHelp.Location = new System.Drawing.Point(836, 543);
-            this.buttonHelp.Name = "buttonHelp";
-            this.buttonHelp.Size = new System.Drawing.Size(191, 27);
-            this.buttonHelp.TabIndex = 16;
-            this.buttonHelp.Text = "Помощь";
-            this.buttonHelp.UseVisualStyleBackColor = true;
-            this.buttonHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            this.btnHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnHelp.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnHelp.Location = new System.Drawing.Point(836, 543);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(191, 27);
+            this.btnHelp.TabIndex = 16;
+            this.btnHelp.Text = "Помощь";
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
             // formHome
             // 
@@ -234,28 +202,27 @@ namespace Autocorrect
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(1048, 603);
-            this.Controls.Add(this.buttonHelp);
-            this.Controls.Add(this.buttonReset);
-            this.Controls.Add(this.buttonFileSave);
-            this.Controls.Add(this.buttonBack);
-            this.Controls.Add(this.labelText);
-            this.Controls.Add(this.labelChange);
-            this.Controls.Add(this.labelSearch);
-            this.Controls.Add(this.labelPath);
-            this.Controls.Add(this.textBox);
-            this.Controls.Add(this.buttonOpenFile);
-            this.Controls.Add(this.textBoxPath);
-            this.Controls.Add(this.buttonReplace);
-            this.Controls.Add(this.textBoxReplace);
-            this.Controls.Add(this.textBoxSearch);
+            this.Controls.Add(this.btnHelp);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.labText);
+            this.Controls.Add(this.labChange);
+            this.Controls.Add(this.labSearch);
+            this.Controls.Add(this.labPath);
+            this.Controls.Add(this.tbText);
+            this.Controls.Add(this.btnOpenOrSaveFile);
+            this.Controls.Add(this.tbPath);
+            this.Controls.Add(this.btnReplace);
+            this.Controls.Add(this.tbReplace);
+            this.Controls.Add(this.tbSearch);
             this.ForeColor = System.Drawing.SystemColors.WindowText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.On;
             this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(1016, 580);
             this.Name = "formHome";
-            this.Padding = new System.Windows.Forms.Padding(30, 30, 30, 30);
+            this.Padding = new System.Windows.Forms.Padding(30);
             this.Text = "Автозамена текста";
+            this.Load += new System.EventHandler(this.formHome_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,23 +230,20 @@ namespace Autocorrect
 
         #endregion
         
-        private System.Windows.Forms.TextBox textBoxReplace;
-        private System.Windows.Forms.TextBox textBoxSearch;
-        private System.Windows.Forms.Button buttonReplace;
-        private System.Windows.Forms.Button buttonOpenFile;
-        private System.Windows.Forms.TextBox textBoxPath;
-        private System.Windows.Forms.TextBox textBox;
-        private System.Windows.Forms.Label labelPath;
-        private System.Windows.Forms.Label labelSearch;
-        private System.Windows.Forms.Label labelChange;
+        private System.Windows.Forms.TextBox tbReplace;
+        private System.Windows.Forms.TextBox tbSearch;
+        private System.Windows.Forms.Button btnReplace;
+        private System.Windows.Forms.Button btnOpenOrSaveFile;
+        private System.Windows.Forms.TextBox tbPath;
+        private System.Windows.Forms.TextBox tbText;
+        private System.Windows.Forms.Label labPath;
+        private System.Windows.Forms.Label labSearch;
+        private System.Windows.Forms.Label labChange;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
-        private System.Windows.Forms.Label labelText;
-        private System.Windows.Forms.Button buttonBack;
-        private System.Windows.Forms.Button buttonFileSave;
-        private System.Windows.Forms.Button buttonReset;
-        private System.Windows.Forms.HelpProvider helpProvider1;
-        private System.Windows.Forms.Button buttonHelp;
+        private System.Windows.Forms.Label labText;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnHelp;
     }
 }
 

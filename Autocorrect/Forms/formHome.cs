@@ -16,106 +16,85 @@ namespace Autocorrect
             InitializeComponent();
         }
 
-        
-
-        private void btnChange_Click(object sender, EventArgs e)
+        private void btnReplace_Click(object sender, EventArgs e)
         {
-            if (textBoxSearch.Text == String.Empty || textBox.Text == String.Empty)
-            {
-                MessageBox.Show($"Заполните поля:\n" +
-                $"{(textBoxSearch.Text == String.Empty ? labelSearch.Text : String.Empty)}\n" +
-                $"{(textBox.Text == String.Empty ? labelText.Text : String.Empty)}",
-                "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            
-            textReplaced = true;
-
-            int count = (textBox.Text.Length - textBox.Text.Replace(textBoxSearch.Text, "").Length)
-                        / textBoxSearch.Text.Length;
-
-            replacedText = textBox.Text.Replace(textBoxSearch.Text, textBoxReplace.Text);
-            textBox.Text = replacedText;
-
-            MessageBox.Show($"Осуществлено замен: {count}.",
-                            "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            labelText.Text = "Изменённый текст";
-
-            textBox.ReadOnly = true;
-            textBoxSearch.Enabled = false;
-            textBoxReplace.Enabled = false;
-            textBoxPath.Enabled = false;
-
-            buttonReplace.Visible = false;
-            buttonBack.Visible = true;
-            buttonOpenFile.Visible = false;
-            buttonFileSave.Visible = true;
-        }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            rollback();
+            if (textReplaced)
+                rollback();
+            else
+                replace();
         }
 
         private void btnResetClick(object sender, EventArgs e)
         {
-            originalText = textBoxSearch.Text = textBoxReplace.Text = textBox.Text = textBoxPath.Text = String.Empty;
+            originalText = tbSearch.Text = tbReplace.Text = tbText.Text = tbPath.Text = String.Empty;
             rollback();
         }
 
+        private void replace()
+        {
+            if (tbSearch.Text == String.Empty || tbText.Text == String.Empty)
+            {
+                MessageBox.Show($"Заполните поля:\n" +
+                $"{(tbSearch.Text == String.Empty ? labSearch.Text : String.Empty)}\n" +
+                $"{(tbText.Text == String.Empty ? labText.Text : String.Empty)}",
+                "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            int count = (tbText.Text.Length - tbText.Text.Replace(tbSearch.Text, "").Length)
+                    / tbSearch.Text.Length;
+
+            replacedText = tbText.Text.Replace(tbSearch.Text, tbReplace.Text);
+            tbText.Text = replacedText;
+
+            MessageBox.Show($"Осуществлено замен: {count}.",
+                            "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            labText.Text = "Изменённый текст";
+            btnReplace.Text = "Назад";
+            btnOpenOrSaveFile.Text = "Сохранить в файл";
+
+            tbText.ReadOnly = true;
+            tbSearch.Enabled = false;
+            tbReplace.Enabled = false;
+            tbPath.Enabled = false;
+
+            textReplaced = true;
+        }
         private void rollback()
         {
-            labelText.Text = "Исходный текст";
-            textBox.Text = originalText;
+            labText.Text = "Исходный текст";
+            btnReplace.Text = "Заменить";
+            btnOpenOrSaveFile.Text = "Выбрать";
+            tbText.Text = originalText;
 
-            textBox.ReadOnly = false;
-            textBoxSearch.Enabled = true;
-            textBoxReplace.Enabled = true;
-            textBoxPath.Enabled = true;
+            tbText.ReadOnly = false;
+            tbSearch.Enabled = true;
+            tbReplace.Enabled = true;
+            tbPath.Enabled = true;
 
-            buttonReplace.Visible = true;
-            buttonBack.Visible = false;
-            buttonOpenFile.Visible = true;
-            buttonFileSave.Visible = false;
+            btnReplace.Visible = true;
+            btnOpenOrSaveFile.Visible = true;
 
             textReplaced = false;
         }
 
-        private void btnOpenFile_Click(object sender, EventArgs e)
+        private void btnOpenOrSaveFile_Click(object sender, EventArgs e)
+        {
+            if (textReplaced)
+                saveToFile();
+            else
+                openFile();
+        }
+        private void openFile()
         {
             openFileDialog.FileName = String.Empty;
             openFileDialog.ShowDialog();
-            if (openFileDialog.FileName == "openFileDialog")
+            if (openFileDialog.FileName == String.Empty)
                 return;
-            textBoxPath.Text = openFileDialog.FileName;
+            tbPath.Text = openFileDialog.FileName; 
             readFile();
         }
-
-        private void readFile()
-        {
-            try
-            {
-                using (StreamReader f = new StreamReader(textBoxPath.Text, Encoding.GetEncoding(1251)))
-                {
-                    textBox.Text = f.ReadToEnd();
-                    f.Close();
-                }
-            }
-            catch (Exception)
-            {
-                if (textBoxPath.Text == String.Empty)
-                    return;
-                MessageBox.Show("Файл не найден!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void tbPath_TextChanged(object sender, EventArgs e)
-        {
-            path = textBoxPath.Text;
-        }
-
-        private void btnFileSave_Click(object sender, EventArgs e)
+        private void saveToFile()
         {
             saveFileDialog.FileName = String.Empty;
             saveFileDialog.ShowDialog();
@@ -128,6 +107,30 @@ namespace Autocorrect
             }
         }
 
+        private void readFile()
+        {
+            try
+            {
+                using (StreamReader f = new StreamReader(tbPath.Text, Encoding.GetEncoding(1251)))
+                {
+                    tbText.Text = f.ReadToEnd();
+                    f.Close();
+                }
+            }
+            catch (Exception)
+            {
+                if (tbPath.Text == String.Empty)
+                    return;
+                MessageBox.Show("Файл не найден!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void tbPath_TextChanged(object sender, EventArgs e)
+        {
+            path = tbPath.Text;
+        }
+
+
         private void btnHelp_Click(object sender, EventArgs e)
         {
             formHelp f = new formHelp();
@@ -138,7 +141,7 @@ namespace Autocorrect
         {
             if (!textReplaced)
             {
-                originalText = textBox.Text;
+                originalText = tbText.Text;
             }
             
         }
@@ -156,6 +159,11 @@ namespace Autocorrect
 
         private void openFileDialog_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
+        }
+
+        private void formHome_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
