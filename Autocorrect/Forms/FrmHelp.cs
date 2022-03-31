@@ -2,11 +2,11 @@
 using System.Windows.Forms;
 
 
-namespace Autocorrect
+namespace AutocorrectText
 {
-    public partial class formHelp : Form
+    public partial class FrmHelp : Form
     {
-        public formHelp()
+        public FrmHelp()
         {
             InitializeComponent();
             labelText.Text = Properties.Resources.StringHelp;

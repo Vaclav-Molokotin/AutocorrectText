@@ -3,17 +3,18 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Autocorrect
+namespace AutocorrectText
 {
-    public partial class formHome : Form
+    public partial class FrmHome : Form
     {
         public string originalText = String.Empty;  //исходный текст
         public string replacedText = String.Empty;  //текст с произведённой автозаменой
         public string path = String.Empty;          //путь к файлу
         private static bool textReplaced = false;   //Произведена ли автозамена.
-        public formHome()
+        public FrmHome()
         {
             InitializeComponent();
+            openFileDialog.Filter = "Текстовый документ (*.txt)|*.txt";
         }
 
         private void btnReplace_Click(object sender, EventArgs e)
@@ -48,7 +49,7 @@ namespace Autocorrect
 
             MessageBox.Show($"Осуществлено замен: {count}.",
                             "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            
             labText.Text = "Изменённый текст";
             btnReplace.Text = "Назад";
             btnOpenOrSaveFile.Text = "Сохранить в файл";
@@ -106,15 +107,15 @@ namespace Autocorrect
                 f.Close();
             }
         }
-
         private void readFile()
         {
             try
             {
-                using (StreamReader f = new StreamReader(tbPath.Text, Encoding.GetEncoding(1251)))
+                if(tbPath.Text.)
+                using (StreamReader reader = new StreamReader(tbPath.Text, Encoding.GetEncoding(1251)))
                 {
-                    tbText.Text = f.ReadToEnd();
-                    f.Close();
+                    tbText.Text = reader.ReadToEnd();
+                    reader.Close();
                 }
             }
             catch (Exception)
@@ -130,10 +131,9 @@ namespace Autocorrect
             path = tbPath.Text;
         }
 
-
         private void btnHelp_Click(object sender, EventArgs e)
         {
-            formHelp f = new formHelp();
+            FrmHelp f = new FrmHelp();
             f.ShowDialog();
         }
 
@@ -164,6 +164,12 @@ namespace Autocorrect
         private void formHome_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void pbLogo_Click(object sender, EventArgs e)
+        {
+            FrmAbout d = new FrmAbout();
+            d.ShowDialog();
         }
     }
 }

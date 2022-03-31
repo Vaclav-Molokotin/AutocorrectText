@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Autocorrect
+namespace AutocorrectText
 {
     static class Program
     {
@@ -13,7 +13,7 @@ namespace Autocorrect
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formHome());
+            Application.Run(new FrmHome());
         }
     }
 }

@@ -43,25 +43,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\formHelp.cs">
+    <Compile Include="Forms\FrmHelp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\formHelp.Designer.cs">
-      <DependentUpon>formHelp.cs</DependentUpon>
+    <Compile Include="Forms\FrmHelp.Designer.cs">
+      <DependentUpon>FrmHelp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\formHome.cs">
+    <Compile Include="Forms\FrmHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\formHome.Designer.cs">
-      <DependentUpon>formHome.cs</DependentUpon>
+    <Compile Include="Forms\FrmHome.Designer.cs">
+      <DependentUpon>FrmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAbout.Designer.cs">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\formHelp.resx">
-      <DependentUpon>formHelp.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmHelp.resx">
+      <DependentUpon>FrmHelp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\formHome.resx">
-      <DependentUpon>formHome.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmHome.resx">
+      <DependentUpon>FrmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -82,6 +91,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

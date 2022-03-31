@@ -1,7 +1,7 @@
 ﻿
-namespace Autocorrect
+namespace AutocorrectText
 {
-    partial class formHelp
+    partial class FrmHelp
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Autocorrect
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formHelp));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHelp));
             this.labelText = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
