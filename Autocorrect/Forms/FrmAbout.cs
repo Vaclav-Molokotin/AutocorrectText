@@ -9,11 +9,18 @@ using System.Windows.Forms;
 
 namespace AutocorrectText
 {
+    /// <summary>
+    /// Форма выводит информацию о программе.
+    /// </summary>
     public partial class FrmAbout : Form
     {
+        /// <summary>
+        /// Инициализирует все объекты на форме
+        /// </summary>
         public FrmAbout()
         {
             InitializeComponent();
+            lbText.Text = Properties.Resources.StringAbout;
         }
     }
 }

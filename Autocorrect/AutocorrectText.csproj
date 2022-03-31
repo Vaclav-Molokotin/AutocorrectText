@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B99280BA-D08D-4FB4-AB90-C393570C628C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Autocorrect</RootNamespace>
-    <AssemblyName>Autocorrect</AssemblyName>
+    <RootNamespace>AutocorrectText</RootNamespace>
+    <AssemblyName>AutocorrectText</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

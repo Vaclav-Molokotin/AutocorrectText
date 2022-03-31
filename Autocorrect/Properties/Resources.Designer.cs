@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Autocorrect.Properties {
+namespace AutocorrectText.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Autocorrect.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Autocorrect.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AutocorrectText.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,14 +61,19 @@ namespace Autocorrect.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на 1. Вставка текста из буфера обмена.
-        ///Текст может быть вставлен в поле Исходный текст из буфера обмена (Ctrl+V).
-        ///
-        ///
-        ///2. Работа с текстом из файла.
-        ///Текст также может быть получен из файла. Для выбора файла необходимо нажать на кнопку Выбрать файл, после в диалоговом окне выбрать нужный файл.
-        ///Также полный путь к файлу может быть указан вручную или вставлен из буфера обмена. Если файла не существует, программой будет выведено
-        ///соответствующее сообщение об ошибке. После изменения текста файла, изменённый текс [остаток строки не уместился]&quot;;.
+        ///   Ищет локализованную строку, похожую на Программа для автоматизации процесса замены символов в тексте..
+        /// </summary>
+        internal static string StringAbout {
+            get {
+                return ResourceManager.GetString("StringAbout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Добавление исходного текста можно осуществить двумя способами:
+        ///1. Текст может быть введён с клавиатуры, либо вставлен из буфера обмена сочетанием клавиш Ctrl+V в поле &quot;Исходный текст&quot;.
+        ///2. Текст может быть считан из файла с расширением &quot;.txt&quot;. 
+        ///2.1 Для того, чтобы считать файл, можно указать полный путь к файлу вводом с клавиатуры, либо вставить из буфера обмена в поле &quot;Путь к файлу&quot;, после чего нажать клавишу Enter. В случае, если файл не будет найден, либо его расширение будет отличным от &quot;.txt&quot;, програ [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string StringHelp {
             get {

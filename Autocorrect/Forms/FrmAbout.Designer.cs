@@ -30,20 +30,40 @@ namespace AutocorrectText
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAbout));
+            this.lbText = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // frmAbout
+            // lbText
+            // 
+            this.lbText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbText.AutoSize = true;
+            this.lbText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbText.Location = new System.Drawing.Point(12, 9);
+            this.lbText.Name = "lbText";
+            this.lbText.Size = new System.Drawing.Size(0, 25);
+            this.lbText.TabIndex = 0;
+            // 
+            // FrmAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(800, 57);
+            this.Controls.Add(this.lbText);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmAbout";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FrmAbout";
             this.Text = "О программе";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lbText;
     }
 }

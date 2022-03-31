@@ -36,14 +36,13 @@ namespace AutocorrectText
             // labelText
             // 
             this.labelText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelText.Location = new System.Drawing.Point(0, 1);
+            this.labelText.Location = new System.Drawing.Point(0, -1);
             this.labelText.MaximumSize = new System.Drawing.Size(1016, 580);
             this.labelText.Name = "labelText";
-            this.labelText.Size = new System.Drawing.Size(999, 531);
+            this.labelText.Size = new System.Drawing.Size(998, 533);
             this.labelText.TabIndex = 0;
-            this.labelText.Click += new System.EventHandler(this.labelText_Click);
             // 
-            // Help
+            // FrmHelp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -52,9 +51,11 @@ namespace AutocorrectText
             this.ClientSize = new System.Drawing.Size(998, 533);
             this.Controls.Add(this.labelText);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1016, 580);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1016, 580);
-            this.Name = "Help";
+            this.Name = "FrmHelp";
             this.Text = "Помощь";
             this.ResumeLayout(false);
 
